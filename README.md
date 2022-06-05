@@ -3,7 +3,7 @@
 ### Video demo: https://www.youtube.com/watch?v=SnPm2hJfqo4
 
 #### Introduction:
-This is a cooking conversion tool that I designed for the web. It allows the user to convert between standard measurements of liquid, flour, butter and temperature. This was written in Python and I used Flask to tie this in to the HTML. I used a MySQL database to store the values for the various measurements and pulled this information to do the necessary calculations in Python. CSS was used for the website design and Flexbox was used for much of the layout. 
+This is a cooking conversion tool that I designed for the web before studying my Masters. It allows the user to convert between standard measurements of liquid, flour, butter and temperature. This was written in Python and Flask was used to tie this in to the HTML. I used a MySQL database to store the values for the various measurements, I recognise that I could have implemented this in a simpler manner but wanted to familiarise myself with this approach for future projects. The necessary calculations are done in Python. CSS was used for the website design and Flexbox was used for much of the layout. 
 
 #### Use case:
 I felt that this tool was useful, as many of the converters online were quite complex and did not specify where their measurements were sourced from. My tool aims to provide information on the most commonly needed conversions quickly and easily, while providing clarity on my sources. 
@@ -20,8 +20,8 @@ I chose to keep the website on one page, using Flask to insert the HTML that is 
 I created the website primarily for the mobile viewport and then set up media queries for tablets and for a full-sized PC screen. I did this as I felt this would be the primary use case for my website, with people using it to quickly check whilst cooking. I used Flexbox for the layout in CSS, as I found this was the best way to organise the elements neatly on the screen and to provide an experience that changes with the viewport. The buttons at the top of the page for instance will change from two rows of two buttons to a single row of 4 when the user moved to the tablet or a larger display. This was done to best use the real estate of the screens. I also decided to centralise the buttons on the full-sized PC display and remove the grey background as I felt this made the website look more professional on a large screen.
 
 Software and language choices:
-I decided to use Python for the backend of the website, as this is the language I have the most experience in. I’ve used Flask before as well so I felt that it would be a good opportunity to use that experience. 
+I decided to use Python for the backend of the website, to keep implementation simple. I also wanted to try out Flask in a personal project. Moving forward I will be using React.
 
-I decided on MySQL for storage of the data as from my research this appeared to me amongst the most popular versions of SQL. I decided against using SQLite, which I’ve used previously, as I wanted to work with a version more commonly used in industry. I also wanted to see if there would be many differences from using SQLite. 
+I decided on MySQL for storage of the data as from my research this appeared to me amongst the most popular versions of SQL. I decided against using SQLite, which I’ve used previously, as I wanted to work with a version more commonly used in industry. This project was done before I studied Postgres.
 
-I decided on using Visual Studio Code as it allowed me to work across various languages within the program, though I had to create a virtual environment to allow for the use of Flask. I used MYSQL Workbench to create the SQL for the creation of the database and I used the terminal on my Mac to access the MySQL server. 
+I decided on using Visual Studio Code as it allowed me to work across various languages within the program, though I had to create a virtual environment to allow for the use of Flask.
