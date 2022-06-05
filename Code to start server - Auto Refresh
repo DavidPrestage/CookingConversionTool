@@ -1,4 +1,0 @@
-cd website
-export set FLASK_APP=webapp
-export FLASK_ENV=development
-flask run
