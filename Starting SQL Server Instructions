@@ -1,0 +1,6 @@
+start a command prompt and type the below (password is 6xCQXFD8 and is saved in your pword manager):
+source .bash_profile
+mysql -u root -p
+
+
+Shouldn't now need to use 'source .bash_profile' as I've moved the required code from the .bash_profile to .zshrc as my Mac runs zsh by default instead of bash and apparently it's better

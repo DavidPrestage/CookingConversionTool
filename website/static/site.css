@@ -1,0 +1,185 @@
+@font-face {
+    font-family: 'robotoregular';
+    src: url('fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fonts/opensans-regular-webfont.woff2') format('woff2'),
+         url('fonts/opensans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('fonts/lato-regular-webfont.woff2') format('woff2'),
+         url('fonts/lato-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.general-text {
+    font-size: 1rem;
+}
+
+/* All the parent divs for the NameConversionBox div need to be set to height 100% so I can make NameConversionBox fill the remaining space*/
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    text-align: center;
+    font-family: 'montserratregular', 'open_sansregular', 'arial', sans-serif;
+}
+
+.title {
+    font-size: 1rem;
+}
+
+.navbar {
+    background-color: rgb(231, 231, 231);
+}
+
+
+
+.title2{
+    font-size: .8rem;
+}
+
+.AnswerBox {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    background:rgb(231, 231, 231);
+    border-radius: 10px;
+}
+
+.AnswerImage {
+    height: auto; 
+    max-width: 8%;
+}
+
+.select_buttons {
+    display: flex;
+    flex: flow;
+    flex-flow: row wrap;
+}
+
+.select_button {
+    max-width: 50%;
+}
+
+.select_image {
+    max-width: 50%;
+}
+
+.conversion {
+    justify-content: space-evenly;
+}
+
+.conversion_child {
+    font-size: 1rem;
+    margin: 0px;
+}
+
+.infobutton {
+    font-size: 1rem;
+}
+
+.footer-text {
+    font-size: 0.75em;
+}
+
+
+@media (min-width: 768px) {
+    
+    .select_button {
+        width: 25%;
+    }
+    
+    .select_image {
+        max-width: 100%
+    }
+
+    .conversion {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+    }
+
+    .conversion_child {
+        font-size: 2rem;
+        margin: 5px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .title2{
+        font-size: 1.2rem;
+    }
+
+    .AnswerBox {
+        font-size: 2rem;
+    }
+
+    .general-text {
+        font-size: 2rem;
+    }
+}
+
+
+@media (min-width: 992px) {
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .title2{
+        font-size: 1.5rem;
+    }
+
+    .select_button {
+        width: 10%;
+    }
+
+    .select_buttons {
+        justify-content: center;
+    }
+    
+    .navbar {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .AnswerBox {
+        align-self: center;
+        max-width: 30%;
+    }
+
+    .infobutton {
+        font-size: 1.5rem;
+    }
+
+}
