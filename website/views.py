@@ -1,6 +1,6 @@
 from datetime import datetime
 from flask import Flask, render_template, request
-from . import app, mysql
+from . import app, db
 from decimal import *
 
 
@@ -12,19 +12,18 @@ def remove_zero_trail(d):
 
 @app.route("/", methods=["GET", "POST"])
 def cooking():
-    conn = mysql.connect()
-    cursor = conn.cursor()
+    session = db.session()
 
-    cursor.execute("SELECT unit, ml FROM liquid;")
+    cursor = session.execute("SELECT unit, ml FROM liquid;").cursor
     liquiddb = cursor.fetchall()
 
-    cursor.execute("SELECT unit, g FROM flour;")
+    cursor = session.execute("SELECT unit, g FROM flour;").cursor
     flourdb = cursor.fetchall()
 
-    cursor.execute("SELECT unit, g FROM butter;")
+    cursor = session.execute("SELECT unit, g FROM butter;").cursor
     butterdb = cursor.fetchall()
 
-    cursor.execute("SELECT unit, c FROM temp;")
+    cursor = session.execute("SELECT unit, c FROM temp;").cursor
     tempdb = cursor.fetchall()
 
     if request.method == "POST":
@@ -83,13 +82,15 @@ def cooking():
 
 
             # Get the value of the unit you are converting from in g/ml from the database. Python string formatting '{}' has been used to have variable table and column names.
-            cursor.execute("SELECT {} FROM {} WHERE unit = %s".format(measure, substance), (fu,))
+            cursor = session.execute("SELECT {} FROM {} WHERE unit = '{}'".format(measure, substance, fu)).cursor
+
             fromunit_in_measure = cursor.fetchall()
             # Take the value out of the tuple that the SQL query has generated
             fromunit_in_measure = fromunit_in_measure[0][0]
 
             # Get the value of the unit you are converting to in g/ml from the database
-            cursor.execute("SELECT {} FROM {} WHERE unit = %s".format(measure, substance), (tu,))
+            cursor = session.execute("SELECT {} FROM {} WHERE unit = '{}'".format(measure, substance, tu)).cursor
+
             tounit_in_measure = cursor.fetchall()
             # Take the value out of the tuple that the SQL query has generated
             tounit_in_measure = tounit_in_measure[0][0]

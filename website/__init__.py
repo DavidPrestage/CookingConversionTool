@@ -1,13 +1,24 @@
 import flask
-from flaskext.mysql import MySQL
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 app = flask.Flask(__name__)
-mysql = MySQL()
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = '6xCQXFD8'
-app.config['MYSQL_DATABASE_DB'] = 'cooking'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-mysql.init_app(app)
 
-conn = mysql.connect()
-cursor = conn.cursor()
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///cooking'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://skjelkjuitnsni:ddab36c82a87dd55a3612302fdee487e0eea5f11dd11449e322053edf74de0c5@ec2-52-48-159-67.eu-west-1.compute.amazonaws.com:5432/d4f1evpqdmj7ks'
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+session = db.session()
+
+
+#mysql = MySQL()
+
+
+#app.config['MYSQL_DATABASE_PASSWORD'] = '6xCQXFD8'
+#app.config['MYSQL_DATABASE_DB'] = 'cooking'
+#app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+#mysql.init_app(app)
+
+#conn = mysql.connect()
+#cursor = conn.cursor()
