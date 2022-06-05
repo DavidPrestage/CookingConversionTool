@@ -83,16 +83,14 @@ def cooking():
 
             # Get the value of the unit you are converting from in g/ml from the database. Python string formatting '{}' has been used to have variable table and column names.
             cursor = session.execute("SELECT {} FROM {} WHERE unit = '{}'".format(measure, substance, fu)).cursor
-            # cursor = session.execute("SELECT {} FROM {} WHERE unit = %s".format(measure, substance), [fu]).cursor
-            #cursor.execute("SELECT {} FROM {} WHERE unit = %s".format(measure, substance), (fu,))
+
             fromunit_in_measure = cursor.fetchall()
             # Take the value out of the tuple that the SQL query has generated
             fromunit_in_measure = fromunit_in_measure[0][0]
 
             # Get the value of the unit you are converting to in g/ml from the database
             cursor = session.execute("SELECT {} FROM {} WHERE unit = '{}'".format(measure, substance, tu)).cursor
-            #cursor = session.execute("SELECT {} FROM {} WHERE unit = %s".format(measure, substance), [tu]).cursor
-            #cursor.execute("SELECT {} FROM {} WHERE unit = %s".format(measure, substance), (tu,))
+
             tounit_in_measure = cursor.fetchall()
             # Take the value out of the tuple that the SQL query has generated
             tounit_in_measure = tounit_in_measure[0][0]
