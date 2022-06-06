@@ -1,6 +1,6 @@
 from datetime import datetime
 from flask import Flask, render_template, request
-from . import app, db
+from app import app, db
 from decimal import *
 
 
