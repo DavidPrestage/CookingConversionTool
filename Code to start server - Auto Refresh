@@ -1,4 +1,4 @@
-cd website
+cd app
 export set FLASK_APP=app
 export FLASK_ENV=development
 flask run
