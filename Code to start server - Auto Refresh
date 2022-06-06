@@ -1,4 +1,3 @@
-cd app
-export set FLASK_APP=app
+export set FLASK_APP=run.py
 export FLASK_ENV=development
 flask run
