@@ -1,16 +1,4 @@
-DROP DATABASE IF EXISTS cooking;
-CREATE DATABASE cooking
-  WITH 
-  OWNER = fsad
-  ENCODING = 'UTF8'
-  CONNECTION LIMIT = -1;
-  
-SET SCHEMA 'cooking';
-
-\c cooking fsad
-
-CREATE SEQUENCE liquid_seq;
-
+DROP TABLE IF EXISTS liquid;
 CREATE TABLE liquid (
 id SERIAL NOT NULL, unit VARCHAR(255) NOT NULL, ml DECIMAL(6,2) NOT NULL, PRIMARY KEY (id)
 );
@@ -37,8 +25,7 @@ VALUES ('US Quarts', 960);
 INSERT INTO liquid (unit, ml)
 VALUES ('US Gallons', 3840);
 
-CREATE SEQUENCE flour_seq;
-
+DROP TABLE IF EXISTS flour;
 CREATE TABLE flour (
 id SERIAL NOT NULL, unit VARCHAR(255) NOT NULL, g DECIMAL(6,2) NOT NULL, PRIMARY KEY (id)
 );
@@ -59,9 +46,7 @@ VALUES ('Ounces', 28);
 INSERT INTO flour (unit, g)
 VALUES ('Pounds', 448);
 
-
-CREATE SEQUENCE butter_seq;
-
+DROP TABLE IF EXISTS butter;
 CREATE TABLE butter (
 id SERIAL NOT NULL, unit VARCHAR(255) NOT NULL, g DECIMAL(6,2) NOT NULL, PRIMARY KEY (id)
 );
@@ -82,9 +67,7 @@ VALUES ('Ounces', 28);
 INSERT INTO butter (unit, g)
 VALUES ('Pounds', 448);
 
-
-CREATE SEQUENCE temp_seq;
-
+DROP TABLE IF EXISTS temp;
 CREATE TABLE temp (
 id SERIAL NOT NULL, unit VARCHAR(255) NOT NULL, c DECIMAL(6,2) NOT NULL, PRIMARY KEY (id)
 );
